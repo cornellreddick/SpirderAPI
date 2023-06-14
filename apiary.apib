@@ -1,0 +1,60 @@
+Format: 1A
+HOST: http://api.spiderlog.net
+
+# Spider log API
+Provides services for the Spider Log app family, recording the world's spider sightings. 
+
+# Group Spiders
+Acces the Spider resources
+
+
+## My Spiders [/spiders{?page,size}]
+### Get all my spider sightings [GET]
+
++ Parameters
+    + page (required, number, `1`)... `page` number 
+    + size (required, number, `10`)... page `size`
+    
++ Request
+
+    + Header
+    
+                    Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+                    
++ Response 200 (application/json)
+
+        {
+            "page" : 
+            {
+                "number" : 1,
+                "size" : 10, 
+                "totalPages": 20
+            },
+            "spiders" : 
+            [
+                {
+                    "sightedAt" : "2023-06-29T07:00",
+                    "imagedUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14562881209_046a7f4d3d_z.jpg",
+                    "description" : "Spider I saw on the train", 
+                    "tags" : [
+                        "stripy"
+                        ]
+                },
+                {
+                    "sightedAt" : "2023-06-29T07:00",
+                    "imagedUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14562881209_046a7f4d3d_z.jpg",
+                    "description" : "Spider I saw on the office", 
+                    "tags" : [
+                        "big"
+                        ]
+                },
+                {
+                    "sightedAt" : "2023-06-29T07:00",
+                    "imagedUrl" : "https://s3-eu-west-1.amazonaws.com/uid-19247681/201408/14562881209_046a7f4d3d_z.jpg",
+                    "description" : "Spider I saw on the home", 
+                    "tags" : [
+                        "big",
+                        "stripy"
+                        ]
+                } 
+            ]
